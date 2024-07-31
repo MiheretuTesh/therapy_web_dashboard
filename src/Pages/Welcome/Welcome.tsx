@@ -1,14 +1,8 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import React from "react";
-import LogoIcon from "../../static/svg/logo_white.svg?react";
+import Layout from "../../Components/Welcome";
 
 const WelcomePage: React.FC = (): JSX.Element => {
-  return (
-    <div>
-      <LogoIcon />
-    </div>
-  );
+  return <Layout />;
 };
 
 export default WelcomePage;

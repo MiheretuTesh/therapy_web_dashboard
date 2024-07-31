@@ -1,0 +1,23 @@
+{
+  "language": "English",
+  "selectLanguage": "Choose a language that you speak",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "createAccount": "Create Account",
+  "logIn": "Log In",
+  "OR": "OR",
+  "logInWithGoogle": "Log In with Google",
+  "logInWithFacebook": "Log In with Facebook",
+  "logInWithAppleID": "Log In with Apple ID",
+  "iAccept": "I accept",
+  "termsOfUse": "Terms of Use",
+  "and": "and",
+  "privacyPolicy": "Privacy Policy",
+  "doNotHaveAnAccount": "Do not have an account?",
+  "createIt": "Create one!",
+
+  "invalidEmail": "Invalid email",
+  "required": "Required",
+  "passwordMin": "Short password",
+  "acceptTerms": "Accept Term of Use and Privacy Policy"
+}

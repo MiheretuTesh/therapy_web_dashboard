@@ -3,3 +3,7 @@ export interface ILoginFormValues {
   password: string;
   terms: boolean;
 }
+
+export interface ISignUpFormValues extends ILoginFormValues {
+  name: string;
+}

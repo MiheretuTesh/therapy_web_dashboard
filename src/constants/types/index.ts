@@ -1,3 +1,3 @@
-import { ILoginFormValues } from "./auth";
+import { ILoginFormValues, ISignUpFormValues } from "./auth";
 
-export type { ILoginFormValues };
+export type { ILoginFormValues, ISignUpFormValues };

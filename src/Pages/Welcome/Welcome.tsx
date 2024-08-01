@@ -1,8 +1,12 @@
+import { Typography } from "@mui/material";
 import React from "react";
-import Layout from "../../Components/Welcome";
 
 const WelcomePage: React.FC = (): JSX.Element => {
-  return <Layout />;
+  return (
+    <div>
+      <Typography>Welcome page</Typography>
+    </div>
+  );
 };
 
 export default WelcomePage;

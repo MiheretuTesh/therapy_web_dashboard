@@ -1,3 +1,4 @@
 import WelcomePage from "./Welcome";
+import AuthPage from "./Auth";
 
-export { WelcomePage };
+export { WelcomePage, AuthPage };

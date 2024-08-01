@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   width: 65%;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 `;
 
 const Title = styled.h1`
@@ -152,7 +151,7 @@ const LogInForm: React.FC = () => {
         onSubmit={handleSubmit}
         validationSchema={authValidationSchema}
       >
-        <Form>
+        <Form style={{ width: "100%" }}>
           <Field
             name="email"
             component={CustomInputField}

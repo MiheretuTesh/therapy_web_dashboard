@@ -17,6 +17,10 @@
   "doNotHaveAnAccount": "Do not have an account?",
   "alreadyHaveAnAccount": "Already have an account?",
   "createIt": "Create one!",
+  "pleaseFillYourInfo": "Please Fill Your Info",
+  "topicsThatYouInterestIn": "Topics That You Interest In:",
+  "youCanChangeAnytime": "(you can change anytime)",
+  "nextStep": "Next step",
 
   "invalidEmail": "Invalid email",
   "required": "Required",

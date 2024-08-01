@@ -17,6 +17,10 @@
   "doNotHaveAnAccount": "У вас нет учетной записи?",
   "alreadyHaveAnAccount": "У вас уже есть аккаунт?",
   "createIt": "Создайте её!",
+  "pleaseFillYourInfo": "Заполните информацию о вас",
+  "topicsThatYouInterestIn": "Темы, которые вас интересуют:",
+  "youCanChangeAnytime": "(вы можете изменить в любое время)",
+  "nextStep": "Следующий шаг",
 
   "invalidEmail": "Недопустимый адрес электронной почты",
   "required": "Обязательное поле",

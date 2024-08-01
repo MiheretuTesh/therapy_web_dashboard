@@ -1,14 +1,16 @@
 import React from "react";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { Routes as RoutesLink } from "./constants/routes";
-import { WelcomePage } from "./Pages";
+import { AuthPage, WelcomePage } from "./Pages";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={RoutesLink.firstPage} element={<WelcomePage />} />
-        <Route path="*" element={<Navigate to={RoutesLink.firstPage} />} />
+        <Route path={RoutesLink.default} element={<WelcomePage />} />
+        <Route path={RoutesLink.logIn} element={<AuthPage />} />
+        <Route path={RoutesLink.signUp} element={<AuthPage />} />
+        <Route path="*" element={<Navigate to={RoutesLink.default} />} />
       </Routes>
     </BrowserRouter>
   );

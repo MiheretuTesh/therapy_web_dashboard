@@ -1,6 +1,7 @@
 enum Routes {
-  firstPage = "",
-  authPage = "/auth",
+  default = "/",
+  logIn = "/login",
+  signUp = "/signUp",
   homePage = "/home",
 }
 

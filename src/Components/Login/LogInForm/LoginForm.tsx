@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
 import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
@@ -7,10 +8,11 @@ import { Field, Form, Formik, FieldProps, FormikProps } from "formik";
 import * as Yup from "yup";
 import { CustomInputField } from "../../Shared";
 import { ILoginFormValues } from "../../../constants/types";
+import { Routes } from "../../../constants/routes";
 
 const Wrapper = styled.div`
   display: flex;
-  width: 70%;
+  width: 65%;
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -62,7 +64,7 @@ const SocialButton = styled.button`
     margin-right: 10px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1250px) {
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -104,6 +106,12 @@ const LinkText = styled.a`
 
 const LogInForm: React.FC = () => {
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const toSignUpPage = () => {
+    navigate(`${Routes.signUp}`);
+  };
 
   const initialValues: ILoginFormValues = useMemo(
     () => ({
@@ -200,9 +208,7 @@ const LogInForm: React.FC = () => {
       </Formik>
       <div>
         {t("doNotHaveAnAccount")}{" "}
-        <LinkText target="_blank" href="https://www.google.com">
-          {t("createIt")}
-        </LinkText>
+        <LinkText onClick={toSignUpPage}>{t("createIt")}</LinkText>
       </div>
     </Wrapper>
   );

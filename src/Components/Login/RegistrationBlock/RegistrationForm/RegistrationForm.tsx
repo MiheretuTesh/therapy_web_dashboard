@@ -1,21 +1,147 @@
 import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
-import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
-import { Google, Apple, Facebook } from "@mui/icons-material";
-import { Field, Form, Formik, FieldProps, FormikProps } from "formik";
+import { Form, Field, FieldProps, Formik, FormikProps } from "formik";
 import * as Yup from "yup";
-import { CustomInputField } from "../../Shared";
-import { ISignUpFormValues } from "../../../constants/types";
-import { Routes } from "../../../constants/routes";
+import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
+import { Apple, Facebook, Google } from "@mui/icons-material";
+import styled from "@emotion/styled";
+import { IRegistrationForm } from "../../../../constants/types";
+import { CustomInputField } from "../../../Shared";
+import { Routes } from "../../../../constants";
+
+interface IProps {
+  handleStepChange: (num: number, values: IRegistrationForm) => void;
+}
+
+const RegistrationForm: React.FC<IProps> = (props) => {
+  const { handleStepChange } = props;
+
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const toLogInPage = () => {
+    navigate(`${Routes.logIn}`);
+  };
+
+  const initialValues: IRegistrationForm = useMemo(
+    () => ({
+      name: "",
+      email: "",
+      password: "",
+      terms: false,
+    }),
+    []
+  );
+
+  const handleSubmit = (values: IRegistrationForm) => {
+    handleStepChange(1, values); //Change to ENUM later
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required(t("required")),
+    email: Yup.string().email(t("invalidEmail")).required(t("required")),
+    password: Yup.string().min(8, t("passwordMin")).required(t("required")),
+    terms: Yup.bool().oneOf([true], t("acceptTerms")),
+  });
+
+  return (
+    <Wrapper>
+      <Title>{t("createAccount")}</Title>
+      <LoginSocialButtonsWrapper>
+        <SocialButton>
+          <Google /> {t("signUpWith")} Google
+        </SocialButton>
+        <SocialButton>
+          <Facebook /> {t("signUpWith")} Facebook
+        </SocialButton>
+        <SocialButton>
+          <Apple /> {t("signUpWith")} Apple ID
+        </SocialButton>
+      </LoginSocialButtonsWrapper>
+      <OrText>- {t("OR")} -</OrText>
+
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
+        <Form style={{ width: "100%" }}>
+          <Field
+            name="name"
+            component={CustomInputField}
+            label="Name"
+            fullWidth
+            margin="normal"
+          />
+          <Field
+            name="email"
+            component={CustomInputField}
+            label="Email Address"
+            fullWidth
+            margin="normal"
+          />
+          <Field
+            name="password"
+            component={CustomInputField}
+            label="Password"
+            type="password"
+            fullWidth
+            margin="normal"
+          />
+          <Field name="terms">
+            {({
+              field,
+              form,
+              meta,
+            }: FieldProps<boolean, FormikProps<IRegistrationForm>>) => (
+              <TermsContainer>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={field.value}
+                      onChange={(e) =>
+                        form.setFieldValue(field.name, e.target.checked)
+                      }
+                    />
+                  }
+                  label={
+                    <>
+                      {t("iAccept")}{" "}
+                      <LinkText target="_blank" href="https://www.google.com">
+                        {t("termsOfUse")}
+                      </LinkText>{" "}
+                      {t("and")}{" "}
+                      <LinkText target="_blank" href="https://www.google.com">
+                        {t("privacyPolicy")}
+                      </LinkText>
+                    </>
+                  }
+                />
+                {meta.touched && meta.error && (
+                  <FormHelperText error>{meta.error}</FormHelperText>
+                )}
+              </TermsContainer>
+            )}
+          </Field>
+          <SubmitButton type="submit">{t("createAccount")}</SubmitButton>
+        </Form>
+      </Formik>
+      <div>
+        {t("alreadyHaveAnAccount")}{" "}
+        <LinkText onClick={toLogInPage}>{t("logIn")}</LinkText>
+      </div>
+    </Wrapper>
+  );
+};
+
+export default RegistrationForm;
 
 const Wrapper = styled.div`
   display: flex;
-  width: 65%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 `;
 
 const Title = styled.h1`
@@ -104,123 +230,3 @@ const LinkText = styled.a`
   cursor: pointer;
   text-decoration: underline;
 `;
-
-const RegistrationForm: React.FC = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const toLogInPage = () => {
-    navigate(`${Routes.logIn}`);
-  };
-
-  const initialValues: ISignUpFormValues = useMemo(
-    () => ({
-      name: "",
-      email: "",
-      password: "",
-      terms: false,
-    }),
-    []
-  );
-
-  const handleSubmit = (values: ISignUpFormValues) => {
-    console.log(values);
-  };
-
-  const authValidationSchema = Yup.object({
-    name: Yup.string().required(t("required")),
-    email: Yup.string().email(t("invalidEmail")).required(t("required")),
-    password: Yup.string().min(8, t("passwordMin")).required(t("required")),
-    terms: Yup.bool().oneOf([true], t("acceptTerms")),
-  });
-
-  return (
-    <Wrapper>
-      <Title>{t("createAccount")}</Title>
-      <LoginSocialButtonsWrapper>
-        <SocialButton>
-          <Google /> {t("signUpWith")} Google
-        </SocialButton>
-        <SocialButton>
-          <Facebook /> {t("signUpWith")} Facebook
-        </SocialButton>
-        <SocialButton>
-          <Apple /> {t("signUpWith")} Apple ID
-        </SocialButton>
-      </LoginSocialButtonsWrapper>
-      <OrText>- {t("OR")} -</OrText>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={authValidationSchema}
-      >
-        <Form>
-          <Field
-            name="name"
-            component={CustomInputField}
-            label="Name"
-            fullWidth
-            margin="normal"
-          />
-          <Field
-            name="email"
-            component={CustomInputField}
-            label="Email Address"
-            fullWidth
-            margin="normal"
-          />
-          <Field
-            name="password"
-            component={CustomInputField}
-            label="Password"
-            type="password"
-            fullWidth
-            margin="normal"
-          />
-          <Field name="terms">
-            {({
-              field,
-              form,
-              meta,
-            }: FieldProps<boolean, FormikProps<ISignUpFormValues>>) => (
-              <TermsContainer>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={field.value}
-                      onChange={(e) =>
-                        form.setFieldValue(field.name, e.target.checked)
-                      }
-                    />
-                  }
-                  label={
-                    <>
-                      {t("iAccept")}{" "}
-                      <LinkText target="_blank" href="https://www.google.com">
-                        {t("termsOfUse")}
-                      </LinkText>{" "}
-                      {t("and")}{" "}
-                      <LinkText target="_blank" href="https://www.google.com">
-                        {t("privacyPolicy")}
-                      </LinkText>
-                    </>
-                  }
-                />
-                {meta.touched && meta.error && (
-                  <FormHelperText error>{meta.error}</FormHelperText>
-                )}
-              </TermsContainer>
-            )}
-          </Field>
-          <SubmitButton type="submit">{t("createAccount")}</SubmitButton>
-        </Form>
-      </Formik>
-      <div>
-        {t("alreadyHaveAnAccount")}{" "}
-        <LinkText onClick={toLogInPage}>{t("logIn")}</LinkText>
-      </div>
-    </Wrapper>
-  );
-};
-
-export default RegistrationForm;

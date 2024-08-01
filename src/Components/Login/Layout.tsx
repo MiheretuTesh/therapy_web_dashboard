@@ -5,7 +5,7 @@ import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import styled from "@emotion/styled";
 import backgroundImage from "../../static/images/welcome_background.png";
 import LoginForm from "./LogInForm";
-import RegistrationForm from "./RegistrationForm";
+import RegistrationBlock from "./RegistrationBlock";
 import { useLocation } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -41,7 +41,9 @@ const Layout: React.FC = () => {
   const [language, setLanguage] = useState(localStorage.getItem("lng") || "en");
   const { pathname } = useLocation();
 
-  const Component = pathname.includes("/signUp") ? RegistrationForm : LoginForm;
+  const Component = pathname.includes("/signUp")
+    ? RegistrationBlock
+    : LoginForm;
 
   const handleSelectChange = (event: SelectChangeEvent) => {
     i18n.changeLanguage(event.target.value);
@@ -56,6 +58,7 @@ const Layout: React.FC = () => {
       </ImageBlock>
       <FormWrapper>
         <Select
+          variant="standard"
           onChange={handleSelectChange}
           value={language}
           sx={{ position: "absolute", top: "20px", right: "20px" }}

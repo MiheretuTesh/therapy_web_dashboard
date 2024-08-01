@@ -4,6 +4,19 @@ export interface ILoginFormValues {
   terms: boolean;
 }
 
-export interface ISignUpFormValues extends ILoginFormValues {
+export interface IRegistrationForm extends ILoginFormValues {
   name: string;
 }
+
+export interface IRegistrationInfoForm {
+  age: string;
+  mainLanguage: string;
+  additionalLanguage: string;
+  gender: string;
+  profession: string;
+  relationshipStatus: string;
+}
+
+export interface IRegistrationValues
+  extends IRegistrationForm,
+    IRegistrationInfoForm {}

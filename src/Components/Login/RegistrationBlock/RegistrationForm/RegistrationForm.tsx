@@ -7,7 +7,7 @@ import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
 import { Apple, Facebook, Google } from "@mui/icons-material";
 import styled from "@emotion/styled";
 import { IRegistrationForm } from "../../../../constants/types";
-import { CustomInputField } from "../../../Shared";
+import { CustomInputField, SubmitButton } from "../../../Shared";
 import { Routes } from "../../../../constants";
 
 interface IProps {
@@ -204,24 +204,6 @@ const TermsContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin: 10px 0;
-`;
-
-const SubmitButton = styled.button`
-  margin: 10px 0;
-  width: 100%;
-  padding: 20px !important;
-  background: linear-gradient(90deg, #e617b2 0%, #48c1fe 100%);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 1s ease;
-
-  &:hover {
-    background: linear-gradient(90deg, #48c1fe 0%, #e617b2 95%);
-  }
 `;
 
 const LinkText = styled.a`

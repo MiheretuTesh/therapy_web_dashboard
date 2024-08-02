@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { SignUpStep } from "../../../constants";
+import { useNavigate } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm";
 import RegistrationInfoForm from "./RegistrationInfoForm";
 import RegistrationTopicsForm from "./RegistrarionTopicsForm";
+import { Routes, SignUpStep } from "../../../constants";
 import {
   IRegistrationInfoForm,
   IRegistrationForm,
+  IRegistrationTopicsForm,
 } from "../../../constants/types";
 
-const Wrapper = styled.div`
-  display: flex;
-  width: 65%;
-  flex-direction: column;
-  align-items: center;
-`;
-
 const RegistrationBlock: React.FC = () => {
+  const navigate = useNavigate();
+
   const [step, setStep] = useState<number>(SignUpStep.Form);
   const [requestObj, setRequestObj] = useState({});
 
@@ -32,8 +29,9 @@ const RegistrationBlock: React.FC = () => {
     setRequestObj({ ...requestObj, ...values });
   };
 
-  const handleSubmit = () => {
-    console.log("Request send with values:", requestObj);
+  const handleSubmit = (values: IRegistrationTopicsForm) => {
+    console.log("Request send with values:", { ...values, ...requestObj });
+    navigate(Routes.homePage);
   };
 
   return (
@@ -42,9 +40,16 @@ const RegistrationBlock: React.FC = () => {
       {isFillInfo && (
         <RegistrationInfoForm handleStepChange={handleStepChange} />
       )}
-      {isTopics && <RegistrationTopicsForm onSubmit={handleSubmit} />}
+      {isTopics && <RegistrationTopicsForm handleSubmit={handleSubmit} />}
     </Wrapper>
   );
 };
 
 export default RegistrationBlock;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+`;

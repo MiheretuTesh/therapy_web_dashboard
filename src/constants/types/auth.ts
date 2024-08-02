@@ -17,6 +17,10 @@ export interface IRegistrationInfoForm {
   relationshipStatus: string;
 }
 
+export interface IRegistrationTopicsForm {
+  topics: string[];
+}
+
 export interface IRegistrationValues
   extends IRegistrationForm,
     IRegistrationInfoForm {}

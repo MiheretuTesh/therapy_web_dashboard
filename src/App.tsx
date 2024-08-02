@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { Routes as RoutesLink } from "./constants/routes";
-import { AuthPage, WelcomePage } from "./Pages";
+import { AuthPage, WelcomePage, HomePage } from "./Pages";
 
 const App: React.FC = () => {
   return (
@@ -10,6 +10,7 @@ const App: React.FC = () => {
         <Route path={RoutesLink.default} element={<WelcomePage />} />
         <Route path={RoutesLink.logIn} element={<AuthPage />} />
         <Route path={RoutesLink.signUp} element={<AuthPage />} />
+        <Route path={RoutesLink.homePage} element={<HomePage />} />
         <Route path="*" element={<Navigate to={RoutesLink.default} />} />
       </Routes>
     </BrowserRouter>

@@ -6,7 +6,7 @@ import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
 import { Google, Apple, Facebook } from "@mui/icons-material";
 import { Field, Form, Formik, FieldProps, FormikProps } from "formik";
 import * as Yup from "yup";
-import { CustomInputField } from "../../Shared";
+import { CustomInputField, SubmitButton } from "../../Shared";
 import { ILoginFormValues } from "../../../constants/types";
 import { Routes } from "../../../constants/routes";
 
@@ -78,24 +78,6 @@ const TermsContainer = styled.div`
   margin: 10px 0;
 `;
 
-const SubmitButton = styled.button`
-  margin: 10px 0;
-  width: 100%;
-  padding: 20px !important;
-  background: linear-gradient(90deg, #e617b2 0%, #48c1fe 100%);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 1s ease;
-
-  &:hover {
-    background: linear-gradient(90deg, #48c1fe 0%, #e617b2 95%);
-  }
-`;
-
 const LinkText = styled.a`
   color: #f368d0;
   font-weight: 800;
@@ -122,7 +104,8 @@ const LogInForm: React.FC = () => {
   );
 
   const handleSubmit = (values: ILoginFormValues) => {
-    console.log(values);
+    console.log("Request send with values:", values);
+    navigate(Routes.homePage);
   };
 
   const authValidationSchema = Yup.object({

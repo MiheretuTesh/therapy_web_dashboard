@@ -25,5 +25,13 @@
   "invalidEmail": "Invalid email",
   "required": "Required",
   "passwordMin": "Short password",
-  "acceptTerms": "Accept Term of Use and Privacy Policy"
+  "acceptTerms": "Accept Term of Use and Privacy Policy",
+  "pleaseSelectAtLeastOneTopic": "Please select at least one Topic",
+
+  "male": "Male",
+  "female":"Female",
+  "other":"Other",
+  "patient": "Patient",
+  "doctor": "Doctor",
+  "admin": "Admin"
 }

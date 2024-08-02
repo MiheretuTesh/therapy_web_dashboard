@@ -1,4 +1,4 @@
 import { Routes } from "./routes";
-import { SignUpStep } from "./auth";
+import { SignUpStep, UserRoles, userRoleList } from "./auth";
 
-export { Routes, SignUpStep };
+export { Routes, SignUpStep, UserRoles, userRoleList };

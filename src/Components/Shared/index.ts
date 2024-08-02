@@ -1,3 +1,4 @@
 import CustomInputField from "./CustomInputField";
+import SubmitButton from "./SubmitButton";
 
-export { CustomInputField };
+export { CustomInputField, SubmitButton };

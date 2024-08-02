@@ -1,19 +1,96 @@
-import styled from "@emotion/styled";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
+import { Chip } from "@mui/material";
+import styled from "@emotion/styled";
+import { IRegistrationTopicsForm } from "../../../../constants/types";
+import { SubmitButton } from "../../../Shared";
+
+const topics = [
+  "Family",
+  "Dogs",
+  "Sport",
+  "Cooking",
+  "Food",
+  "Pets",
+  "Parents",
+  "Marriage",
+  "Relationship",
+  "Girlfriends",
+  "Boyfriends",
+  "Intimacy",
+  "Sisters",
+  "History",
+  "Psychology",
+  "Emigration",
+  "Childrens",
+  "Freedom",
+  "Trendings",
+  "Hot Topic",
+  "Fashion",
+  "Diet",
+  "Yoga",
+  "Some Topic Here",
+  "Buddism",
+  "LGBT+",
+  "Romantic",
+];
 
 interface IProps {
-  onSubmit: () => void;
+  handleSubmit: (values: IRegistrationTopicsForm) => void;
 }
 
 const RegistrationTopicsForm: React.FC<IProps> = (props) => {
-  const { onSubmit } = props;
+  const { handleSubmit } = props;
   const { t } = useTranslation();
+
+  const validationSchema = Yup.object().shape({
+    topics: Yup.array().min(1, t("pleaseSelectAtLeastOneTopic")),
+  });
+
+  const onSubmit = (values: IRegistrationTopicsForm) => {
+    handleSubmit(values);
+  };
+
   return (
     <Wrapper>
-      <Title>{t("topicsThatYouInterestIn")}</Title>
-      <Description>{t("youCanChangeAnytime")}</Description>
-      <SubmitButton onClick={onSubmit}>{t("createAccount")}</SubmitButton>
+      <Formik
+        initialValues={{ topics: [] as string[] }}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {({ values, setFieldValue, errors, touched }) => (
+          <Form>
+            <Title>{t("topicsThatYouInterestIn")}</Title>
+            <Description>{t("youCanChangeAnytime")}</Description>
+            <ChipWrapper>
+              {topics.map((topic) => (
+                <StyledChip
+                  key={topic}
+                  label={topic}
+                  variant="filled"
+                  color={
+                    values.topics.includes(topic) ? "secondary" : "primary"
+                  }
+                  onClick={() => {
+                    if (values.topics.includes(topic)) {
+                      setFieldValue(
+                        "topics",
+                        values.topics.filter((t) => t !== topic)
+                      );
+                    } else {
+                      setFieldValue("topics", [...values.topics, topic]);
+                    }
+                  }}
+                />
+              ))}
+            </ChipWrapper>
+            {errors.topics && touched.topics && <Error>{errors.topics}</Error>}
+            <SubmitButton type="submit">{t("createAccount")}</SubmitButton>
+          </Form>
+        )}
+      </Formik>
     </Wrapper>
   );
 };
@@ -44,20 +121,22 @@ const Description = styled.h2`
   margin-bottom: 20px;
 `;
 
-const SubmitButton = styled.button`
-  margin: 10px 0;
-  width: 100%;
-  padding: 20px !important;
-  background: linear-gradient(90deg, #e617b2 0%, #48c1fe 100%);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 1s ease;
+const ChipWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
 
-  &:hover {
-    background: linear-gradient(90deg, #48c1fe 0%, #e617b2 95%);
-  }
+const StyledChip = styled(Chip)`
+  cursor: pointer;
+`;
+
+const Error = styled.div`
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: #d74242;
+  margin-top: 10px;
 `;

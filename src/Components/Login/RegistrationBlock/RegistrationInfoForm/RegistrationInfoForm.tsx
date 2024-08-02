@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Form, Formik, FormikProps } from "formik";
 import * as Yup from "yup";
+import { Form, Formik, FormikProps } from "formik";
 import {
   FormControl,
   FormHelperText,
@@ -11,7 +11,9 @@ import {
   TextField,
 } from "@mui/material";
 import styled from "@emotion/styled";
+import { userRoleList } from "../../../../constants";
 import { IRegistrationInfoForm } from "../../../../constants/types";
+import { SubmitButton } from "../../../Shared";
 
 interface IProps {
   handleStepChange: (num: number, values: any) => void;
@@ -163,9 +165,11 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
                 onChange={handleChange}
                 variant="standard"
               >
-                <MenuItem value="programmer">Programmer</MenuItem>
-                <MenuItem value="doctor">Doctor</MenuItem>
-                <MenuItem value="driver">Driver</MenuItem>
+                {userRoleList.map((item) => (
+                  <MenuItem key={item.value} value={item.value}>
+                    {t(item.label)}
+                  </MenuItem>
+                ))}
               </Select>
               <FormHelperText>
                 {touched.profession && errors.profession}
@@ -226,22 +230,4 @@ const Description = styled.h2`
   font-weight: 500;
   font-family: "Inter", sans-serif;
   margin-bottom: 20px;
-`;
-
-const SubmitButton = styled.button`
-  margin: 10px 0;
-  width: 100%;
-  padding: 20px !important;
-  background: linear-gradient(90deg, #e617b2 0%, #48c1fe 100%);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 1s ease;
-
-  &:hover {
-    background: linear-gradient(90deg, #48c1fe 0%, #e617b2 95%);
-  }
 `;

@@ -33,5 +33,16 @@
   "other": "Другой",
   "patient": "Пациент",
   "doctor": "Доктор",
-  "admin": "Администратор"
+  "admin": "Администратор",
+
+  "profile": "Профиль",
+  "chatRooms": "Чат-комнаты",
+  "friendList": "Лист друзей",
+  "therpiests": "Терапевты",
+  "profSpeakers": "Проф. ораторы",
+  "calendar": "Календарь",
+  "payments": "Оплата",
+  "settings": "Настройки",
+  "help": "Помощь",
+  "logout": "Выход"
 }

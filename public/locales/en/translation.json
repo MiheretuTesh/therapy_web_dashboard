@@ -29,9 +29,20 @@
   "pleaseSelectAtLeastOneTopic": "Please select at least one Topic",
 
   "male": "Male",
-  "female":"Female",
-  "other":"Other",
+  "female": "Female",
+  "other": "Other",
   "patient": "Patient",
   "doctor": "Doctor",
-  "admin": "Admin"
+  "admin": "Admin",
+
+  "profile": "Profile",
+  "chatRooms": "Chat rooms",
+  "friendList": "Friend list",
+  "therpiests": "Therpiests",
+  "profSpeakers": "Professional speakets",
+  "calendar": "Calendar",
+  "payments": "payments",
+  "settings": "Settings",
+  "help": "Help",
+  "logout": "Log out"
 }

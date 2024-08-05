@@ -82,7 +82,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
                   max: 100,
                 }}
                 variant="standard"
-                label="Age"
+                label={t("age")}
                 fullWidth
                 error={Boolean(touched.age && errors.age)}
                 helperText={touched.age && errors.age}
@@ -95,7 +95,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
               margin="normal"
               error={touched.mainLanguage && Boolean(errors.mainLanguage)}
             >
-              <InputLabel>Main language that you use</InputLabel>
+              <InputLabel>{t("mainLanguageThatYouUse")}</InputLabel>
               <Select
                 name="mainLanguage"
                 value={values.mainLanguage}
@@ -118,7 +118,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
                 touched.additionalLanguage && Boolean(errors.additionalLanguage)
               }
             >
-              <InputLabel>Additional language that you use</InputLabel>
+              <InputLabel>{t("addLanguageThatYouUse")}</InputLabel>
               <Select
                 name="additionalLanguage"
                 value={values.additionalLanguage}
@@ -139,7 +139,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
               margin="normal"
               error={touched.gender && Boolean(errors.gender)}
             >
-              <InputLabel>Your gender</InputLabel>
+              <InputLabel>{t("yourGender")}</InputLabel>
               <Select
                 name="gender"
                 value={values.gender}
@@ -158,7 +158,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
               margin="normal"
               error={touched.profession && Boolean(errors.profession)}
             >
-              <InputLabel>Specialization / Profession</InputLabel>
+              <InputLabel>{t("specializationProfession")}</InputLabel>
               <Select
                 name="profession"
                 value={values.profession}
@@ -183,7 +183,7 @@ const RegistrationInfoForm: React.FC<IProps> = (props) => {
                 touched.relationshipStatus && Boolean(errors.relationshipStatus)
               }
             >
-              <InputLabel>Relationship status</InputLabel>
+              <InputLabel>{t("relationshipStatus")}</InputLabel>
               <Select
                 name="relationshipStatus"
                 value={values.relationshipStatus}

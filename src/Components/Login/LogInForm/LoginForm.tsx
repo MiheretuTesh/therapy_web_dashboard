@@ -94,6 +94,10 @@ const LogInForm: React.FC = () => {
     navigate(`${Routes.signUp}`);
   };
 
+  const toRecoveryPassPage = () => {
+    navigate(`${Routes.recoveryPassword}`);
+  };
+
   const initialValues: ILoginFormValues = useMemo(
     () => ({
       email: "",
@@ -138,14 +142,14 @@ const LogInForm: React.FC = () => {
           <Field
             name="email"
             component={CustomInputField}
-            label="Email Address"
+            label={t("email")}
             fullWidth
             margin="normal"
           />
           <Field
             name="password"
             component={CustomInputField}
-            label="Password"
+            label={t("password")}
             type="password"
             fullWidth
             margin="normal"
@@ -191,6 +195,12 @@ const LogInForm: React.FC = () => {
       <div>
         {t("doNotHaveAnAccount")}{" "}
         <LinkText onClick={toSignUpPage}>{t("createIt")}</LinkText>
+      </div>
+      <div>
+        {t("youForgoutYourPassword")}{" "}
+        <LinkText onClick={toRecoveryPassPage}>
+          {t("recoveryPassword")}
+        </LinkText>
       </div>
     </Wrapper>
   );

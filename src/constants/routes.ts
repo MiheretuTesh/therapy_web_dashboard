@@ -14,6 +14,7 @@ enum Routes {
   default = "/",
   logIn = "/login",
   signUp = "/signUp",
+  recoveryPassword = "/recoveryPassword",
   homePage = "/home",
   profile = "/profile",
   chatRooms = "/chatRooms",

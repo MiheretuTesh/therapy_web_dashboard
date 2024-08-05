@@ -70,21 +70,21 @@ const RegistrationForm: React.FC<IProps> = (props) => {
           <Field
             name="name"
             component={CustomInputField}
-            label="Name"
+            label={t("name")}
             fullWidth
             margin="normal"
           />
           <Field
             name="email"
             component={CustomInputField}
-            label="Email Address"
+            label={t("email")}
             fullWidth
             margin="normal"
           />
           <Field
             name="password"
             component={CustomInputField}
-            label="Password"
+            label={t("password")}
             type="password"
             fullWidth
             margin="normal"

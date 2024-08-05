@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import LogoIcon from "../../static/svg/logo_white.svg?react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import styled from "@emotion/styled";
-import backgroundImage from "../../static/images/welcome_background.png";
 import LoginForm from "./LogInForm";
 import RegistrationBlock from "./RegistrationBlock";
-import { useLocation } from "react-router-dom";
+import RecoveryPassword from "./RecoveryPassword";
+import { Routes } from "../../constants";
+import backgroundImage from "../../static/images/welcome_background.png";
+import LogoIcon from "../../static/svg/logo_white.svg?react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -41,9 +43,11 @@ const Layout: React.FC = () => {
   const [language, setLanguage] = useState(localStorage.getItem("lng") || "en");
   const { pathname } = useLocation();
 
-  const Component = pathname.includes("/signUp")
+  const Component = pathname.includes(Routes.signUp)
     ? RegistrationBlock
-    : LoginForm;
+    : pathname.includes(Routes.logIn)
+    ? LoginForm
+    : RecoveryPassword;
 
   const handleSelectChange = (event: SelectChangeEvent) => {
     i18n.changeLanguage(event.target.value);

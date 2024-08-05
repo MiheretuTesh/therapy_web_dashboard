@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
           </SidebarLink>
         </SidebarLinkBox>
         <SidebarLinkBox>
-          <SidebarLink to={""}>
+          <SidebarLink to={"/login"}>
             <IconWrapper>
               <Logout />
             </IconWrapper>

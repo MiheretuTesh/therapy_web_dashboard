@@ -10,8 +10,9 @@ const App: React.FC = () => {
         <Route path={RoutesLink.default} element={<WelcomePage />} />
         <Route path={RoutesLink.logIn} element={<AuthPage />} />
         <Route path={RoutesLink.signUp} element={<AuthPage />} />
+        <Route path={RoutesLink.recoveryPassword} element={<AuthPage />} />
         <Route path={RoutesLink.homePage} element={<HomePage />} />
-        <Route path="*" element={<Navigate to={RoutesLink.default} />} />
+        <Route path="*" element={<Navigate to={RoutesLink.logIn} />} />
       </Routes>
     </BrowserRouter>
   );

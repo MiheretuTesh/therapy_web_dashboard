@@ -10,6 +10,8 @@
   "OR": "OR",
   "logInWith": "Log In with",
   "signUpWith": "Sign up with",
+  "recoveryPassword": "Recovery Password",
+  "youForgoutYourPassword": "You forgout your password?",
   "iAccept": "I accept",
   "termsOfUse": "Terms of Use",
   "and": "and",
@@ -41,8 +43,19 @@
   "therpiests": "Therpiests",
   "profSpeakers": "Professional speakets",
   "calendar": "Calendar",
-  "payments": "payments",
+  "payments": "Payments",
   "settings": "Settings",
   "help": "Help",
-  "logout": "Log out"
+  "logout": "Log out",
+  "sendMessage": "Send message",
+
+  "password": "Password",
+  "email": "Email Address",
+  "name": "Name",
+  "age": "Age",
+  "mainLanguageThatYouUse": "Main language that you use",
+  "addLanguageThatYouUse": "Additional language that you use",
+  "yourGender": "Your gender",
+  "specializationProfession": "Specialization / Profession",
+  "relationshipStatus": "Relationship status"
 }

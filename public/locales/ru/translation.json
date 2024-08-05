@@ -10,6 +10,8 @@
   "OR": "ИЛИ",
   "logInWith": "Вход с помощью",
   "signUpWith": "Регистрация с помощью",
+  "youForgoutYourPassword": "Вы забыли свой пароль?",
+  "recoveryPassword": "Восстановление пароля",
   "iAccept": "Я принимаю",
   "termsOfUse": "Условия использования",
   "and": "и",
@@ -44,5 +46,16 @@
   "payments": "Оплата",
   "settings": "Настройки",
   "help": "Помощь",
-  "logout": "Выход"
+  "logout": "Выход",
+  "sendMessage": "Отправить сообщение",
+
+  "password": "Пароль",
+  "email": "Электронная почта",
+  "name": "Имя",
+  "age": "Возраст",
+  "mainLanguageThatYouUse": "Основной язык, которым вы пользуетесь",
+  "addLanguageThatYouUse": "Дополнительный язык, который вы используете",
+  "yourGender": "Ваш пол",
+  "specializationProfession": "Специализация / Профессия",
+  "relationshipStatus": "Статус отношений"
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { ContentWrapper } from "../../Components/Shared";
+import Layout from "../../Components/Home";
 
 const HomePage: React.FC = () => {
   return (
     <ContentWrapper>
-      <div style={{ color: "white" }}>Home Page</div>
+      <Layout />
     </ContentWrapper>
   );
 };

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { HelpOutline, Logout } from "@mui/icons-material";
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
-import LogoIcon from "../../../static/svg/logo_color.svg?react";
+import LogoIcon from "../../../static/images/logo.png";
 import { sidebarRoutes } from "../../../constants";
 
 const Sidebar: React.FC = () => {
@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
     <SidebarWrapper>
       <SidebarBox>
         <LogoWrapper>
-          <LogoIcon />
+          <img src={LogoIcon} alt="Logo" />
         </LogoWrapper>
         {sidebarRoutes.map((item) => (
           <SidebarLinkBox key={item.id} pathname={pathname} url={item.url}>

@@ -45,5 +45,5 @@ const ChildrenWrapper = styled.div`
   color: white;
   width: 100%;
   height: 95%;
-  padding: 20px;
+  padding: 20px 20px 0;
 `;

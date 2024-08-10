@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment, { Moment } from "moment";
 import { DateCalendar } from "@mui/x-date-pickers";
 import styled from "@emotion/styled";
-import LogoIcon from "../../../static/images/profile.png";
+import ProfileIMG from "../../../static/images/profile.png";
 
 const TherapiestProfileSection: React.FC = () => {
   const [date, setDate] = useState<Moment>(moment());
@@ -15,7 +15,7 @@ const TherapiestProfileSection: React.FC = () => {
           <Caption>The records of all time activity</Caption>
         </UserHeader>
         <BreakLine />
-        <UserPhoto src={LogoIcon} alt="Logo" />
+        <UserPhoto src={ProfileIMG} alt="Logo" />
         <UserInfo>
           <Label>Dr. Laura Valexander</Label>
           <Description>

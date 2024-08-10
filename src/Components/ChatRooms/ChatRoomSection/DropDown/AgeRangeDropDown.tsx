@@ -49,7 +49,7 @@ const AgeDropdown: React.FC = () => {
 
   return (
     <DropdownContainer>
-      <Label>Age Range:</Label>
+      <Label>Age diapason:</Label>
       <DropdownHeader onClick={(e) => handleClick(e, true)}>
         <TextContainer>
           <SelectedText>{selectedLowestAge}</SelectedText>

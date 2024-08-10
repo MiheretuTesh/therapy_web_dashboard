@@ -68,14 +68,14 @@ const Layout: React.FC = () => {
             />
             <Dropdown
               defaultValue="No"
-              label="Country Allowed"
+              label="Gender Forbidden"
               values={["Yes", "No"]}
               labelColor="#F368D0"
             />
             <Dropdown
               defaultValue="No"
-              label="Gender Forbidden"
-              values={["Yes", "No"]}
+              label="Country Forbidden"
+              values={["France", "Germany", "Sweden", "No"]}
               labelColor="#F368D0"
             />
           </DropdownContainer>

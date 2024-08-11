@@ -1,14 +1,14 @@
-import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "@emotion/styled";
-import { useTranslation } from "react-i18next";
-import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
-import { Google, Apple, Facebook } from "@mui/icons-material";
-import { Field, Form, Formik, FieldProps, FormikProps } from "formik";
-import * as Yup from "yup";
-import { CustomInputField, SubmitButton } from "../../Shared";
-import { ILoginFormValues } from "../../../constants/types";
-import { Routes } from "../../../constants/routes";
+import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
+import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
+import { Google, Apple, Facebook } from '@mui/icons-material';
+import { Field, Form, Formik, FieldProps, FormikProps } from 'formik';
+import * as Yup from 'yup';
+import { CustomInputField, SubmitButton } from '../../Shared';
+import { ILoginFormValues } from '../../../constants/types';
+import { Routes } from '../../../constants/routes';
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const Title = styled.h1`
   font-size: 60px;
   color: #130a38;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 `;
 
@@ -30,7 +30,7 @@ const OrText = styled.span`
   color: #f368d0;
   font-weight: 800;
   margin: 20px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const LoginSocialButtonsWrapper = styled.div`
@@ -50,7 +50,7 @@ const SocialButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   background-color: white;
   transition: background-color 0.3s;
@@ -100,56 +100,56 @@ const LogInForm: React.FC = () => {
 
   const initialValues: ILoginFormValues = useMemo(
     () => ({
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       terms: false,
     }),
     []
   );
 
   const handleSubmit = (values: ILoginFormValues) => {
-    console.log("Request send with values:", values);
+    console.log('Request send with values:', values);
     navigate(Routes.homePage);
   };
 
   const authValidationSchema = Yup.object({
-    email: Yup.string().email(t("invalidEmail")).required(t("required")),
-    password: Yup.string().min(8, t("passwordMin")).required(t("required")),
-    terms: Yup.bool().oneOf([true], t("acceptTerms")),
+    email: Yup.string().email(t('invalidEmail')).required(t('required')),
+    password: Yup.string().min(8, t('passwordMin')).required(t('required')),
+    terms: Yup.bool().oneOf([true], t('acceptTerms')),
   });
 
   return (
     <Wrapper>
-      <Title>{t("logIn")}</Title>
+      <Title>{t('logIn')}</Title>
       <LoginSocialButtonsWrapper>
         <SocialButton>
-          <Google /> {t("logInWith")} Google
+          <Google /> {t('logInWith')} Google
         </SocialButton>
         <SocialButton>
-          <Facebook /> {t("logInWith")} Facebook
+          <Facebook /> {t('logInWith')} Facebook
         </SocialButton>
         <SocialButton>
-          <Apple /> {t("logInWith")} Apple ID
+          <Apple /> {t('logInWith')} Apple ID
         </SocialButton>
       </LoginSocialButtonsWrapper>
-      <OrText>- {t("OR")} -</OrText>
+      <OrText>- {t('OR')} -</OrText>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={authValidationSchema}
       >
-        <Form style={{ width: "100%" }}>
+        <Form style={{ width: '100%' }}>
           <Field
             name="email"
             component={CustomInputField}
-            label={t("email")}
+            label={t('email')}
             fullWidth
             margin="normal"
           />
           <Field
             name="password"
             component={CustomInputField}
-            label={t("password")}
+            label={t('password')}
             type="password"
             fullWidth
             margin="normal"
@@ -172,13 +172,13 @@ const LogInForm: React.FC = () => {
                   }
                   label={
                     <>
-                      {t("iAccept")}{" "}
+                      {t('iAccept')}{' '}
                       <LinkText target="_blank" href="https://www.google.com">
-                        {t("termsOfUse")}
-                      </LinkText>{" "}
-                      {t("and")}{" "}
+                        {t('termsOfUse')}
+                      </LinkText>{' '}
+                      {t('and')}{' '}
                       <LinkText target="_blank" href="https://www.google.com">
-                        {t("privacyPolicy")}
+                        {t('privacyPolicy')}
                       </LinkText>
                     </>
                   }
@@ -193,13 +193,13 @@ const LogInForm: React.FC = () => {
         </Form>
       </Formik>
       <div>
-        {t("doNotHaveAnAccount")}{" "}
-        <LinkText onClick={toSignUpPage}>{t("createIt")}</LinkText>
+        {t('doNotHaveAnAccount')}{' '}
+        <LinkText onClick={toSignUpPage}>{t('createIt')}</LinkText>
       </div>
       <div>
-        {t("youForgoutYourPassword")}{" "}
+        {t('youForgoutYourPassword')}{' '}
         <LinkText onClick={toRecoveryPassPage}>
-          {t("recoveryPassword")}
+          {t('recoveryPassword')}
         </LinkText>
       </div>
     </Wrapper>

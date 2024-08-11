@@ -24,7 +24,7 @@ const Button = styled.button<{ size: "small" | "large" }>`
   padding: 20px !important;
   background: linear-gradient(90deg, #e617b2 0%, #48c1fe 100%);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   font-size: 18px;
   font-weight: 600;

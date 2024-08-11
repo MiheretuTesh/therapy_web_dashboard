@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { HelpOutline, Logout } from "@mui/icons-material";
-import styled from "@emotion/styled";
-import { useTranslation } from "react-i18next";
-import LogoIcon from "../../../static/images/logo.png";
-import { sidebarRoutes } from "../../../constants";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { HelpOutline, Logout } from '@mui/icons-material';
+import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
+import LogoIcon from '../../../static/images/logo.png';
+import { sidebarRoutes } from '../../../constants';
 
 const Sidebar: React.FC = () => {
   const { t } = useTranslation();
@@ -28,20 +28,20 @@ const Sidebar: React.FC = () => {
         ))}
       </SidebarBox>
       <SidebarBox>
-        <SidebarLinkBox pathname={pathname} url={"/help"}>
-          <SidebarLink to={"/help"} pathname={pathname} url={"/help"}>
+        <SidebarLinkBox pathname={pathname} url={'/help'}>
+          <SidebarLink to={'/help'} pathname={pathname} url={'/help'}>
             <IconWrapper>
               <HelpOutline />
             </IconWrapper>
-            {t("help")}
+            {t('help')}
           </SidebarLink>
         </SidebarLinkBox>
         <SidebarLinkBox>
-          <SidebarLink to={"/login"}>
+          <SidebarLink to={'/login'}>
             <IconWrapper>
               <Logout />
             </IconWrapper>
-            {t("logout")}
+            {t('logout')}
           </SidebarLink>
         </SidebarLinkBox>
       </SidebarBox>
@@ -56,7 +56,7 @@ const SidebarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  width: 250px;
+  min-width: 250px;
   padding: 20px 0;
   height: 100%;
   background-color: #140a38;
@@ -78,7 +78,7 @@ const SidebarLinkBox = styled.div<{ pathname?: string; url?: string }>`
   margin: 10px 0;
   padding-left: 20px;
   background-color: ${({ pathname, url }) =>
-    pathname && url && pathname.includes(url) ? "white" : "transparent"};
+    pathname && url && pathname.includes(url) ? 'white' : 'transparent'};
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 `;
@@ -87,10 +87,10 @@ const SidebarLink = styled(Link)<{ pathname?: string; url?: string }>`
   display: flex;
   align-items: center;
   padding: 5px 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: ${({ pathname, url }) =>
-    pathname && url && pathname.includes(url) ? "#140a38" : "white"};
+    pathname && url && pathname.includes(url) ? '#140a38' : 'white'};
   text-decoration: none;
 
   &:hover {

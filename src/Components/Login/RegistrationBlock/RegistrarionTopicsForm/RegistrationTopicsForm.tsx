@@ -1,40 +1,40 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import * as Yup from "yup";
-import { Form, Formik } from "formik";
-import { Chip } from "@mui/material";
-import styled from "@emotion/styled";
-import { IRegistrationTopicsForm } from "../../../../constants/types";
-import { SubmitButton } from "../../../Shared";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import * as Yup from 'yup';
+import { Form, Formik } from 'formik';
+import { Chip } from '@mui/material';
+import styled from '@emotion/styled';
+import { IRegistrationTopicsForm } from '../../../../constants/types';
+import { SubmitButton } from '../../../Shared';
 
 const topics = [
-  "Family",
-  "Dogs",
-  "Sport",
-  "Cooking",
-  "Food",
-  "Pets",
-  "Parents",
-  "Marriage",
-  "Relationship",
-  "Girlfriends",
-  "Boyfriends",
-  "Intimacy",
-  "Sisters",
-  "History",
-  "Psychology",
-  "Emigration",
-  "Childrens",
-  "Freedom",
-  "Trendings",
-  "Hot Topic",
-  "Fashion",
-  "Diet",
-  "Yoga",
-  "Some Topic Here",
-  "Buddism",
-  "LGBT+",
-  "Romantic",
+  'Family',
+  'Dogs',
+  'Sport',
+  'Cooking',
+  'Food',
+  'Pets',
+  'Parents',
+  'Marriage',
+  'Relationship',
+  'Girlfriends',
+  'Boyfriends',
+  'Intimacy',
+  'Sisters',
+  'History',
+  'Psychology',
+  'Emigration',
+  'Childrens',
+  'Freedom',
+  'Trendings',
+  'Hot Topic',
+  'Fashion',
+  'Diet',
+  'Yoga',
+  'Some Topic Here',
+  'Buddism',
+  'LGBT+',
+  'Romantic',
 ];
 
 interface IProps {
@@ -46,7 +46,7 @@ const RegistrationTopicsForm: React.FC<IProps> = (props) => {
   const { t } = useTranslation();
 
   const validationSchema = Yup.object().shape({
-    topics: Yup.array().min(1, t("pleaseSelectAtLeastOneTopic")),
+    topics: Yup.array().min(1, t('pleaseSelectAtLeastOneTopic')),
   });
 
   const onSubmit = (values: IRegistrationTopicsForm) => {
@@ -62,8 +62,8 @@ const RegistrationTopicsForm: React.FC<IProps> = (props) => {
       >
         {({ values, setFieldValue, errors, touched }) => (
           <Form>
-            <Title>{t("topicsThatYouInterestIn")}</Title>
-            <Description>{t("youCanChangeAnytime")}</Description>
+            <Title>{t('topicsThatYouInterestIn')}</Title>
+            <Description>{t('youCanChangeAnytime')}</Description>
             <ChipWrapper>
               {topics.map((topic) => (
                 <StyledChip
@@ -71,23 +71,23 @@ const RegistrationTopicsForm: React.FC<IProps> = (props) => {
                   label={topic}
                   variant="filled"
                   color={
-                    values.topics.includes(topic) ? "secondary" : "primary"
+                    values.topics.includes(topic) ? 'secondary' : 'primary'
                   }
                   onClick={() => {
                     if (values.topics.includes(topic)) {
                       setFieldValue(
-                        "topics",
+                        'topics',
                         values.topics.filter((t) => t !== topic)
                       );
                     } else {
-                      setFieldValue("topics", [...values.topics, topic]);
+                      setFieldValue('topics', [...values.topics, topic]);
                     }
                   }}
                 />
               ))}
             </ChipWrapper>
             {errors.topics && touched.topics && <Error>{errors.topics}</Error>}
-            <SubmitButton type="submit">{t("createAccount")}</SubmitButton>
+            <SubmitButton type="submit">{t('createAccount')}</SubmitButton>
           </Form>
         )}
       </Formik>
@@ -109,7 +109,7 @@ const Title = styled.h1`
   font-size: 60px;
   color: #130a38;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 `;
 
@@ -117,7 +117,7 @@ const Description = styled.h2`
   text-align: center;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   margin-bottom: 20px;
 `;
 
@@ -131,12 +131,13 @@ const ChipWrapper = styled.div`
 
 const StyledChip = styled(Chip)`
   cursor: pointer;
+  border-radius: 0;
 `;
 
 const Error = styled.div`
   width: 100%;
   text-align: center;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #d74242;
   margin-top: 10px;
 `;

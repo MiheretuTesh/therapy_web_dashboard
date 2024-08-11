@@ -1,37 +1,37 @@
-import React from "react";
-import styled from "@emotion/styled";
-import LogoIcon from "../../../static/images/photo_user.png";
+import React from 'react';
+import styled from '@emotion/styled';
+import LogoIcon from '../../../static/images/photo_user.png';
 
 const mockData = [
   {
     id: 1,
     photo: LogoIcon,
-    userName: "Kayn Vampyr",
-    text: "My most vampire brother of all, I consider you godsend.",
+    userName: 'Kayn Vampyr',
+    text: 'My most vampire brother of all, I consider you godsend.',
   },
   {
     id: 2,
     photo: LogoIcon,
-    userName: "Kayn Vampyr",
-    text: "My most vampire brother of all, I consider you godsend.",
+    userName: 'Kayn Vampyr',
+    text: 'My most vampire brother of all, I consider you godsend.',
   },
   {
     id: 3,
     photo: LogoIcon,
-    userName: "Kayn Vampyr",
-    text: "My most vampire brother of all, I consider you godsend.",
+    userName: 'Kayn Vampyr',
+    text: 'My most vampire brother of all, I consider you godsend.',
   },
   {
     id: 4,
     photo: LogoIcon,
-    userName: "Kayn Vampyr",
-    text: "My most vampire brother of all, I consider you godsend.",
+    userName: 'Kayn Vampyr',
+    text: 'My most vampire brother of all, I consider you godsend.',
   },
   {
     id: 5,
     photo: LogoIcon,
-    userName: "Kayn Vampyr",
-    text: "My most vampire brother of all, I consider you godsend.",
+    userName: 'Kayn Vampyr',
+    text: 'My most vampire brother of all, I consider you godsend.',
   },
 ];
 
@@ -55,8 +55,8 @@ const Comment: React.FC = () => {
 export default Comment;
 
 const Wrapper = styled.div`
-  height: 29%;
-  width: 34%;
+  height: 34%;
+  width: 100%;
   padding: 10px;
   background-color: white;
   color: black;
@@ -83,7 +83,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14px;
   width: 34%;
@@ -112,14 +112,14 @@ const UserPhoto = styled.img`
 `;
 
 const Label = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14px;
   margin-left: 10px;
 `;
 
 const Description = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding-left: 35px;
 `;

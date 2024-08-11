@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import moment, { Moment } from "moment";
-import { Add, CameraAlt } from "@mui/icons-material";
-import { DateCalendar } from "@mui/x-date-pickers";
-import styled from "@emotion/styled";
-import LogoIcon from "../../../static/images/photo_user.png";
+import React, { useState } from 'react';
+import moment, { Moment } from 'moment';
+import { Add, CameraAlt } from '@mui/icons-material';
+import { DateCalendar } from '@mui/x-date-pickers';
+import styled from '@emotion/styled';
+import LogoIcon from '../../../static/images/photo_user.png';
 
 const CalendarBlock: React.FC = () => {
   const [date, setDate] = useState<Moment>(moment());
@@ -36,7 +36,7 @@ const CalendarBlock: React.FC = () => {
         </Photos>
       </PhotoBlock>
       <DateCalendarCustom
-        views={["day", "month"]}
+        views={['day', 'month']}
         value={date}
         onChange={(newValue) => setDate(newValue)}
       />
@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: white;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
 `;
 
@@ -79,7 +79,7 @@ const PhotoBlock = styled.div`
   flex-direction: column;
   background-color: white;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px;
 `;
 
 const UserPhoto = styled.img`
@@ -98,7 +98,7 @@ const UserInfo = styled.div`
 `;
 
 const Label = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #4b4b4b;
@@ -106,7 +106,7 @@ const Label = styled.span`
 `;
 
 const Description = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 17px;
   color: #4b4b4b;
 `;
@@ -150,7 +150,7 @@ const ChatBlock = styled.div`
 
 const ChatBlockLabel = styled.span`
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: #7d12a3;
 `;
@@ -178,14 +178,14 @@ const Divider = styled.div`
 `;
 
 const ChatBlockInfoLabel = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #8e94a7;
 `;
 
 const ChatBlockInfoDesc = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: #160041;

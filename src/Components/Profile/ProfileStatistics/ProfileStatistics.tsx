@@ -1,6 +1,6 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Rating } from "@mui/material";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Chip, Rating } from '@mui/material';
 import {
   Favorite,
   FavoriteBorder,
@@ -11,9 +11,23 @@ import {
   InsertEmoticon,
   ThumbUpAlt,
   ThumbUpOffAlt,
-} from "@mui/icons-material";
-import styled from "@emotion/styled";
-import { Routes } from "../../../constants";
+} from '@mui/icons-material';
+import styled from '@emotion/styled';
+import { Routes } from '../../../constants';
+
+const topics = [
+  'Family',
+  'Cooking',
+  'Food',
+  'Parents',
+  'Marriage',
+  'Relationship',
+  'Girlfriends',
+  'Boyfriends',
+  'Intimacy',
+  'Sisters',
+  'Dogs',
+];
 
 const ProfileStatistics: React.FC = () => {
   const navigate = useNavigate();
@@ -30,6 +44,9 @@ const ProfileStatistics: React.FC = () => {
         <LinkText onClick={() => toPage(Routes.profile)}>Profile</LinkText>
       </BreadCrumbs>
       <Name>Dulce Maria</Name>
+      <MessageBox>
+        <Triangle />I Only See Ghosts; They Are Inside You (8)
+      </MessageBox>
       <StatBlock>
         <StatItem>
           <Label>Celebrity</Label>
@@ -117,7 +134,16 @@ const ProfileStatistics: React.FC = () => {
         </InfoItem>
         <InfoItem>
           <Label>Favorites</Label>
-          <Description>Portuguese, English</Description>
+          <ChipWrapper>
+            {topics.map((topic, index) => (
+              <StyledChip
+                key={topic}
+                label={topic}
+                variant="filled"
+                color={index % 2 === 0 ? 'secondary' : 'primary'}
+              />
+            ))}
+          </ChipWrapper>
         </InfoItem>
       </InfoBlock>
     </Wrapper>
@@ -135,16 +161,16 @@ const Wrapper = styled.div`
   height: 100%;
   border-radius: 10px;
   padding: 20px;
+  overflow-y: auto;
 `;
 
 const BreadCrumbs = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
 `;
 
 const Name = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 24px;
 `;
@@ -157,26 +183,27 @@ const LinkText = styled.a`
 
 const StatBlock = styled.div`
   display: flex;
-  margin: 10px 0;
+  justify-content: space-between;
+  margin: 5px 0;
 `;
 
 const StatItem = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 10px;
+  padding-right: 5px;
 `;
 
 const Label = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #A4A4A5;
+  color: #a4a4a5;
   padding-bottom: 5px;
   width: 25%;
 `;
 
 const Description = styled.span`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: black;
@@ -185,7 +212,7 @@ const Description = styled.span`
 `;
 
 const Votes = styled.span<{ color: string }>`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: ${(props) => props.color};
@@ -205,4 +232,41 @@ const InfoBlock = styled.div`
 
 const InfoItem = styled.div`
   display: flex;
+  margin: 3px;
+`;
+
+const ChipWrapper = styled.div`
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+`;
+
+const StyledChip = styled(Chip)`
+  cursor: pointer;
+  border-radius: 0;
+`;
+
+const MessageBox = styled.div`
+  position: relative;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 8px 16px;
+  display: inline-block;
+  font-size: 16px;
+  color: #374151;
+  margin: 10px 0;
+`;
+
+const Triangle = styled.div`
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #f1f5f9;
+  transform: translateY(-50%);
 `;

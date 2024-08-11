@@ -1,14 +1,14 @@
-import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { Form, Field, FieldProps, Formik, FormikProps } from "formik";
-import * as Yup from "yup";
-import { Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
-import { Apple, Facebook, Google } from "@mui/icons-material";
-import styled from "@emotion/styled";
-import { IRegistrationForm } from "../../../../constants/types";
-import { CustomInputField, SubmitButton } from "../../../Shared";
-import { Routes } from "../../../../constants";
+import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Form, Field, FieldProps, Formik, FormikProps } from 'formik';
+import * as Yup from 'yup';
+import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
+import { Apple, Facebook, Google } from '@mui/icons-material';
+import styled from '@emotion/styled';
+import { IRegistrationForm } from '../../../../constants/types';
+import { CustomInputField, SubmitButton } from '../../../Shared';
+import { Routes } from '../../../../constants';
 
 interface IProps {
   handleStepChange: (num: number, values: IRegistrationForm) => void;
@@ -26,9 +26,9 @@ const RegistrationForm: React.FC<IProps> = (props) => {
 
   const initialValues: IRegistrationForm = useMemo(
     () => ({
-      name: "",
-      email: "",
-      password: "",
+      name: '',
+      email: '',
+      password: '',
       terms: false,
     }),
     []
@@ -39,52 +39,52 @@ const RegistrationForm: React.FC<IProps> = (props) => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required(t("required")),
-    email: Yup.string().email(t("invalidEmail")).required(t("required")),
-    password: Yup.string().min(8, t("passwordMin")).required(t("required")),
-    terms: Yup.bool().oneOf([true], t("acceptTerms")),
+    name: Yup.string().required(t('required')),
+    email: Yup.string().email(t('invalidEmail')).required(t('required')),
+    password: Yup.string().min(8, t('passwordMin')).required(t('required')),
+    terms: Yup.bool().oneOf([true], t('acceptTerms')),
   });
 
   return (
     <Wrapper>
-      <Title>{t("createAccount")}</Title>
+      <Title>{t('createAccount')}</Title>
       <LoginSocialButtonsWrapper>
         <SocialButton>
-          <Google /> {t("signUpWith")} Google
+          <Google /> {t('signUpWith')} Google
         </SocialButton>
         <SocialButton>
-          <Facebook /> {t("signUpWith")} Facebook
+          <Facebook /> {t('signUpWith')} Facebook
         </SocialButton>
         <SocialButton>
-          <Apple /> {t("signUpWith")} Apple ID
+          <Apple /> {t('signUpWith')} Apple ID
         </SocialButton>
       </LoginSocialButtonsWrapper>
-      <OrText>- {t("OR")} -</OrText>
+      <OrText>- {t('OR')} -</OrText>
 
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        <Form style={{ width: "100%" }}>
+        <Form style={{ width: '100%' }}>
           <Field
             name="name"
             component={CustomInputField}
-            label={t("name")}
+            label={t('name')}
             fullWidth
             margin="normal"
           />
           <Field
             name="email"
             component={CustomInputField}
-            label={t("email")}
+            label={t('email')}
             fullWidth
             margin="normal"
           />
           <Field
             name="password"
             component={CustomInputField}
-            label={t("password")}
+            label={t('password')}
             type="password"
             fullWidth
             margin="normal"
@@ -107,13 +107,13 @@ const RegistrationForm: React.FC<IProps> = (props) => {
                   }
                   label={
                     <>
-                      {t("iAccept")}{" "}
+                      {t('iAccept')}{' '}
                       <LinkText target="_blank" href="https://www.google.com">
-                        {t("termsOfUse")}
-                      </LinkText>{" "}
-                      {t("and")}{" "}
+                        {t('termsOfUse')}
+                      </LinkText>{' '}
+                      {t('and')}{' '}
                       <LinkText target="_blank" href="https://www.google.com">
-                        {t("privacyPolicy")}
+                        {t('privacyPolicy')}
                       </LinkText>
                     </>
                   }
@@ -124,12 +124,12 @@ const RegistrationForm: React.FC<IProps> = (props) => {
               </TermsContainer>
             )}
           </Field>
-          <SubmitButton type="submit">{t("createAccount")}</SubmitButton>
+          <SubmitButton type="submit">{t('createAccount')}</SubmitButton>
         </Form>
       </Formik>
       <div>
-        {t("alreadyHaveAnAccount")}{" "}
-        <LinkText onClick={toLogInPage}>{t("logIn")}</LinkText>
+        {t('alreadyHaveAnAccount')}{' '}
+        <LinkText onClick={toLogInPage}>{t('logIn')}</LinkText>
       </div>
     </Wrapper>
   );
@@ -149,7 +149,7 @@ const Title = styled.h1`
   font-size: 60px;
   color: #130a38;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 `;
 
@@ -158,7 +158,7 @@ const OrText = styled.span`
   color: #f368d0;
   font-weight: 800;
   margin: 20px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 const LoginSocialButtonsWrapper = styled.div`
@@ -178,7 +178,7 @@ const SocialButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   background-color: white;
   transition: background-color 0.3s;

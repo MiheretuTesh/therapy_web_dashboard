@@ -74,6 +74,7 @@ const Label = styled.span<{ color: string }>`
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: ${(props) => props.color};
+  white-space: nowrap;
 `;
 
 const SelectedText = styled.span`

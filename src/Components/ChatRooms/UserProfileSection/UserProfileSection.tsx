@@ -62,6 +62,26 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: transparent;
   color: black;
+
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent !important;
+  }
 `;
 
 const UserSection = styled.div`

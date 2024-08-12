@@ -3,6 +3,7 @@ import moment, { Moment } from "moment";
 import { DateCalendar } from "@mui/x-date-pickers";
 import styled from "@emotion/styled";
 import ProfileIMG from "../../../static/images/profile.png";
+import TextButton from "../../Shared/TextButton";
 
 const TherapiestProfileSection: React.FC = () => {
   const [date, setDate] = useState<Moment>(moment());
@@ -41,9 +42,12 @@ const TherapiestProfileSection: React.FC = () => {
             <InfoCount>180</InfoCount>
           </InfoRow>
         </UserInfoList>
-        <Button>
-          <Text>View Profile</Text>
-        </Button>
+        <TextButton
+          text="View Profile"
+          onClick={() => console.log("Button clicked")}
+          fontSize="18px"
+          backgroundColor="linear-gradient(91.41deg, #e617b2 0%, #48c1fe 100%)"
+        />
       </UserSection>
       <DateCalendarCustom
         views={["day", "month"]}
@@ -70,6 +74,26 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 const UserSection = styled.div`
@@ -171,26 +195,6 @@ const DateCalendarCustom = styled(DateCalendar)`
   & .MuiPickersFadeTransitionGroup-root {
     width: 100%;
   }
-`;
-
-const Button = styled.div`
-  width: 90%;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: linear-gradient(91.41deg, #e617b2 0%, #48c1fe 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  padding: 14px 24px;
-  cursor: pointer;
-`;
-
-const Text = styled.span`
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 700;
 `;
 
 const DateSection = styled.div`

@@ -4,7 +4,8 @@ import CalendarBlock from './CalendarBlock';
 import UploadBackground from './UploadBackground';
 import ProfileStatistics from './ProfileStatistics';
 import FriendsList from './FriendList';
-import { Comment } from './../Shared';
+import { Comment, SubmitButton } from './../Shared';
+import ChatRooms from './ChatRooms';
 
 const Layout: React.FC = () => {
   return (
@@ -20,7 +21,10 @@ const Layout: React.FC = () => {
           </Social>
         </MiddleContainer>
       </MiddleBlockWrapper>
-      <RightBlock></RightBlock>
+      <RightBlock>
+        <SubmitButton>Create a meeting</SubmitButton>
+        <ChatRooms/>
+      </RightBlock>
     </Wrapper>
   );
 };
@@ -60,5 +64,4 @@ const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 24%;
-  background-color: white;
 `;

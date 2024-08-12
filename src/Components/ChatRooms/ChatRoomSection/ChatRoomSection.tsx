@@ -7,7 +7,7 @@ import AgeDropdown from "./DropDown/AgeRangeDropDown";
 import Dropdown from "./DropDown/DropDown";
 import { ExpandMore, ExpandLess, Sort, Search } from "@mui/icons-material";
 import { StackedCard, InlineCard } from "./Card";
-import { cardData } from "../../../constants/data/cardData";
+import { chatRoomCard } from "../../../constants/data/cardData";
 
 const Layout: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -81,25 +81,35 @@ const Layout: React.FC = () => {
         )}
       </FilterContainer>
 
-      <CardContainer>
-        {cardData.map((card, index) => (
-          <StackedCard
-            key={index}
-            imageSrc={card.imageSrc}
-            title={card.title}
-          />
-        ))}
-      </CardContainer>
-      <CardContainer>
-        {cardData.map((card, index) => (
-          <InlineCard key={index} imageSrc={card.imageSrc} title={card.title} />
-        ))}
-      </CardContainer>
-      <CardContainer>
-        {cardData.map((card, index) => (
-          <InlineCard key={index} imageSrc={card.imageSrc} title={card.title} />
-        ))}
-      </CardContainer>
+      <ChatRoomCardsContainer>
+        <CardContainer>
+          {chatRoomCard.map((card, index) => (
+            <StackedCard
+              key={index}
+              imageSrc={card.imageSrc}
+              title={card.title}
+            />
+          ))}
+        </CardContainer>
+        <CardContainer>
+          {chatRoomCard.map((card, index) => (
+            <InlineCard
+              key={index}
+              imageSrc={card.imageSrc}
+              title={card.title}
+            />
+          ))}
+        </CardContainer>
+        <CardContainer>
+          {chatRoomCard.map((card, index) => (
+            <InlineCard
+              key={index}
+              imageSrc={card.imageSrc}
+              title={card.title}
+            />
+          ))}
+        </CardContainer>
+      </ChatRoomCardsContainer>
     </Wrapper>
   );
 };
@@ -114,6 +124,31 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: transparent;
   color: black;
+`;
+
+const ChatRoomCardsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent !important;
+  }
 `;
 
 const CardContainer = styled.div`

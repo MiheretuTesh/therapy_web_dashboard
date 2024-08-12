@@ -24,6 +24,10 @@ enum Routes {
   calendar = "/calendar",
   payments = "/payments",
   settings = "/settings",
+
+  // therapists routes
+
+  detail = "/therpiests/:id",
 }
 
 const sidebarRoutes = [

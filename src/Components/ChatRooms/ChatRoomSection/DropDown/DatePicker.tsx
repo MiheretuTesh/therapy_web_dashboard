@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Menu, MenuItem, IconButton } from "@mui/material";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import {
+  KeyboardArrowUp,
+  KeyboardArrowDown,
+  EventAvailable,
+} from "@mui/icons-material";
 
 const DateDropdown: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -25,12 +27,12 @@ const DateDropdown: React.FC = () => {
   return (
     <DropdownContainer>
       <DropdownHeader onClick={handleClick}>
-        <EventAvailableIcon />
+        <EventAvailable />
         <SelectedDateContainer>
           {selectedDate ? selectedDate : "Any Date"}
         </SelectedDateContainer>
         <IconButton>
-          {anchorEl ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          {anchorEl ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
         </IconButton>
       </DropdownHeader>
       <Menu

@@ -197,7 +197,7 @@ const DividerVertical = styled.div`
 `;
 
 const DividerHorizontal = styled.div`
-  border: 1px solid #7d12a3;
+  height: 1px;
   width: 100%;
   background-color: #7d12a3;
 `;

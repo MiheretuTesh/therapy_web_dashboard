@@ -1,0 +1,18 @@
+export const topics = [
+  { label: "Relationship", color: "#f368d0" },
+  { label: "Marriage", color: "#8B9CFF" },
+  { label: "Jazz", color: "#f368d0" },
+  { label: "Boyfriends", color: "#8B9CFF" },
+  { label: "Girlfriends", color: "#f368d0" },
+  { label: "Marriage", color: "#8B9CFF" },
+  { label: "Music", color: "#f368d0" },
+  { label: "Romantic", color: "#8B9CFF" },
+  { label: "Jazz", color: "#f368d0" },
+  { label: "Marriage", color: "#8B9CFF" },
+  { label: "Relationship", color: "#f368d0" },
+  { label: "Boyfriends", color: "#8B9CFF" },
+  { label: "Marriage", color: "#f368d0" },
+  { label: "Romantic", color: "#8B9CFF" },
+  { label: "Girlfriends", color: "#f368d0" },
+  { label: "Girlfriends", color: "#8B9CFF" },
+];

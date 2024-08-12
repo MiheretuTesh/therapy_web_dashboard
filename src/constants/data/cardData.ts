@@ -3,6 +3,7 @@ import ChatRoomTwo from "../../static/images/chatroom_two.png";
 import ChatRoomThree from "../../static/images/chatroom_three.png";
 import EyeSVG from "../../static/svg/eye.svg";
 import JoinSVG from "../../static/svg/Join.svg";
+import Profile from "../../static/images/profile.png";
 
 export const chatRoomCard = [
   {
@@ -90,5 +91,108 @@ export const friendsPageChatRoomCard = [
         onClick: () => console.log("Join button clicked"),
       },
     ],
+  },
+];
+
+export const therapiestPageUserCard = [
+  {
+    id: 1,
+    imageSrc: Profile,
+    title: "Dr. Laura Valexander",
+    description: "8 years of experience in psychological studies",
+    infoElements: ["Psychologist", "Eng", "Therapist"],
+    rating: 4.5,
+    ratingCount: 349,
+    buttonText: "Schedule a consultation",
+  },
+  {
+    id: 2,
+    imageSrc: Profile,
+    title: "Dr. John Doe",
+    description: "10 years of experience in clinical psychology",
+    infoElements: ["Psychologist", "Clinician", "Author"],
+    rating: 4.8,
+    ratingCount: 412,
+    buttonText: "Book an appointment",
+  },
+  {
+    id: 3,
+    imageSrc: Profile,
+    title: "Dr. Emily Smith",
+    description: "5 years of experience in child psychology",
+    infoElements: ["Psychologist", "Speaker"],
+    rating: 4.7,
+    ratingCount: 290,
+    buttonText: "Consult Now",
+  },
+  {
+    id: 4,
+    imageSrc: Profile,
+    title: "Dr. Robert Brown",
+    description: "12 years of experience in cognitive behavioral therapy",
+    infoElements: ["CBT Therapist", "Trainer", "Author"],
+    rating: 4.6,
+    ratingCount: 378,
+    buttonText: "Get Help Today",
+  },
+  {
+    id: 5,
+    imageSrc: Profile,
+    title: "Dr. Alice Johnson",
+    description: "7 years of experience in family therapy",
+    infoElements: ["Family Therapist", "Mediator", "Author"],
+    rating: 4.4,
+    ratingCount: 265,
+    buttonText: "Start Session",
+  },
+  {
+    id: 6,
+    imageSrc: Profile,
+    title: "Dr. Laura Valexander",
+    description: "8 years of experience in psychological studies",
+    infoElements: ["Psychologist", "Eng", "Therapist"],
+    rating: 4.5,
+    ratingCount: 349,
+    buttonText: "Schedule a consultation",
+  },
+  {
+    id: 7,
+    imageSrc: Profile,
+    title: "Dr. John Doe",
+    description: "10 years of experience in clinical psychology",
+    infoElements: ["Psychologist", "Clinician", "Author"],
+    rating: 4.8,
+    ratingCount: 412,
+    buttonText: "Book an appointment",
+  },
+  {
+    id: 8,
+    imageSrc: Profile,
+    title: "Dr. Emily Smith",
+    description: "5 years of experience in child psychology",
+    infoElements: ["Psychologist", "Speaker"],
+    rating: 4.7,
+    ratingCount: 290,
+    buttonText: "Consult Now",
+  },
+  {
+    id: 9,
+    imageSrc: Profile,
+    title: "Dr. Robert Brown",
+    description: "12 years of experience in cognitive behavioral therapy",
+    infoElements: ["CBT Therapist", "Trainer", "Author"],
+    rating: 4.6,
+    ratingCount: 378,
+    buttonText: "Get Help Today",
+  },
+  {
+    id: 10,
+    imageSrc: Profile,
+    title: "Dr. Alice Johnson",
+    description: "7 years of experience in family therapy",
+    infoElements: ["Family Therapist", "Mediator", "Author"],
+    rating: 4.4,
+    ratingCount: 265,
+    buttonText: "Start Session",
   },
 ];

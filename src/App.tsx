@@ -10,6 +10,7 @@ import {
   ChatRooms,
   FriendList,
   Therpiests,
+  TherpiestDetail,
 } from "./Pages";
 import { Routes as RoutesLink } from "./constants/routes";
 
@@ -27,6 +28,11 @@ const App: React.FC = () => {
           <Route path={RoutesLink.chatRooms} element={<ChatRooms />} />
           <Route path={RoutesLink.friendList} element={<FriendList />} />
           <Route path={RoutesLink.therpiests} element={<Therpiests />} />
+          <Route
+            path={RoutesLink.therapistDetail}
+            element={<TherpiestDetail />}
+          />
+
           <Route path="*" element={<Navigate to={RoutesLink.logIn} />} />
         </Routes>
       </BrowserRouter>

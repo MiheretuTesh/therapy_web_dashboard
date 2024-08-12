@@ -2,11 +2,13 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import TherapiestProfileSection from "./TherapiestProfileSection";
+import TherpiestsSection from "./TherpiestsSection";
 
 const Therpiests: React.FC = () => {
   return (
     <Container>
       <TherapiestProfileSection />
+      <TherpiestsSection />
     </Container>
   );
 };
@@ -18,11 +20,4 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   gap: 10px;
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;

@@ -26,8 +26,7 @@ enum Routes {
   settings = "/settings",
 
   // therapists routes
-
-  detail = "/therpiests/:id",
+  therapistDetail = "/therpiests/:id",
 }
 
 const sidebarRoutes = [

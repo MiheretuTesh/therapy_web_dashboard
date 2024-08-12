@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import SearchIcon from "@mui/icons-material/Search";
 import LanguageDropdown from "./DropDown/LanguageDropdown";
 import DateDropdown from "./DropDown/DatePicker";
 import SubjectDropdown from "./DropDown/SubjectDropdown";
 import AgeDropdown from "./DropDown/AgeRangeDropDown";
 import Dropdown from "./DropDown/DropDown";
-import { ExpandMore, ExpandLess, Sort } from "@mui/icons-material";
+import { ExpandMore, ExpandLess, Sort, Search } from "@mui/icons-material";
 import { StackedCard, InlineCard } from "./Card";
 import { cardData } from "../../../constants/data/cardData";
 
@@ -109,7 +108,7 @@ export default Layout;
 
 const Wrapper = styled.div`
   height: 100%;
-  width: 75%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -121,7 +120,7 @@ const CardContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 10px;
 `;
 
 const DropdownContainer = styled.div`
@@ -140,7 +139,7 @@ const SearchContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-const SearchIconWrapper = styled(SearchIcon)`
+const SearchIconWrapper = styled(Search)`
   width: 30.58px;
   height: 29.84px;
   display: flex;
@@ -204,17 +203,6 @@ const Tab = styled.button<{ active: boolean }>`
   &:hover {
     color: #48c1fe;
   }
-`;
-
-const TabContent = styled.div`
-  width: 100%;
-  padding: 20px;
-  background-color: white;
-  color: #000;
-  border-radius: 8px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 18px;
 `;
 
 const SortIconWrapper = styled(Sort)`

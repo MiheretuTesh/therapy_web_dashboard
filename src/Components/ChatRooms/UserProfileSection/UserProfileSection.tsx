@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import LogoIcon from "../../../static/images/photo_user.png";
 import { topics } from "../../../constants/data/topics";
 
-const Layout: React.FC = () => {
+const UserProfileSection: React.FC = () => {
   const [date, setDate] = useState<Moment>(moment());
 
   return (
@@ -51,7 +51,7 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout;
+export default UserProfileSection;
 
 const Wrapper = styled.div`
   height: 100%;
@@ -71,7 +71,7 @@ const UserSection = styled.div`
   flex-direction: column;
   background-color: white;
   color: black;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 20px;
 `;
 
@@ -173,7 +173,6 @@ const Text = styled.span`
 
 const BreakLine = styled.div`
   width: 90%;
-  padding: 0px 0px;
   margin: 15px 0px;
   border: 1px solid #140a38;
 `;

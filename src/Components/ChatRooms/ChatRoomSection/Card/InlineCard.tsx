@@ -118,11 +118,12 @@ const MusicIconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 1px 5px;
   border-radius: 10px;
   pointer-events: none;
   background-color: #e4e4e4;
   color: #000;
+  font-family: "Roboto", sans-serif;
 `;
 
 const HeadphonesIcon = styled(Headphones)`

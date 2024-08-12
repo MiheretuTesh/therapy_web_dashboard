@@ -2,7 +2,7 @@ import React from "react";
 import { ContentWrapper } from "../../Components/Shared";
 import Layout from "../../Components/ChatRooms";
 
-const HomePage: React.FC = () => {
+const ChatRoomsPage: React.FC = () => {
   return (
     <ContentWrapper>
       <Layout />
@@ -10,4 +10,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default ChatRoomsPage;

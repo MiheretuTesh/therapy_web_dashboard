@@ -117,7 +117,7 @@ const Wrapper = styled.div`
   overflow: auto;
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0px;
   }
 
   ::-webkit-scrollbar-track {

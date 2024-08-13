@@ -4,6 +4,8 @@ import { Routes } from "../../constants/routes";
 import styled from "@emotion/styled";
 
 import TherapiestProfileSection from "./TherapiestProfileSection";
+import Therapist from "./TherpiestDetailSection";
+import CalanderSection from "./CalanderSection";
 
 const Therpiests: React.FC = () => {
   const navigate = useNavigate();
@@ -23,6 +25,8 @@ const Therpiests: React.FC = () => {
       </HeaderTitle>
       <HorixontalContainer>
         <TherapiestProfileSection />
+        <Therapist />
+        <CalanderSection />
       </HorixontalContainer>
     </Container>
   );
@@ -36,13 +40,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;
 
 const HeaderTitle = styled.div`
@@ -69,4 +66,22 @@ const HorixontalContainer = styled.div`
   width: 100%;
   display: flex;
   gap: 10px;
-`;
+
+ overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    `;

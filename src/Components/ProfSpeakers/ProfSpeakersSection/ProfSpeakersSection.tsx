@@ -6,7 +6,7 @@ import MidicalCrossSVG from "../../../static/svg/medical-cross.svg";
 import Card from "./Card/Card";
 import { therapiestPageUserCard } from "../../../constants/data/cardData";
 
-const Therpiests: React.FC = () => {
+const ProfSpeakersSection: React.FC = () => {
   return (
     <Wrapper>
       <FilterContainer>
@@ -59,7 +59,7 @@ const Therpiests: React.FC = () => {
   );
 };
 
-export default Therpiests;
+export default ProfSpeakersSection;
 
 const Wrapper = styled.div`
   width: 75%;

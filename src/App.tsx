@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
+import React from 'react';
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import {
   AuthPage,
   WelcomePage,
@@ -12,8 +12,9 @@ import {
   Therpiests,
   ProfSpeakers,
   TherpiestDetail,
-} from "./Pages";
-import { Routes as RoutesLink } from "./constants/routes";
+  Settings,
+} from './Pages';
+import { Routes as RoutesLink } from './constants/routes';
 
 const App: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const App: React.FC = () => {
             path={RoutesLink.therapistDetail}
             element={<TherpiestDetail />}
           />
-
+          <Route path={RoutesLink.settings} element={<Settings />} />
           <Route path="*" element={<Navigate to={RoutesLink.logIn} />} />
         </Routes>
       </BrowserRouter>

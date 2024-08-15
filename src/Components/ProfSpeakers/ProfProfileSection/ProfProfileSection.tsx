@@ -197,26 +197,6 @@ const DateCalendarCustom = styled(DateCalendar)`
   }
 `;
 
-const Button = styled.div`
-  width: 90%;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: linear-gradient(91.41deg, #e617b2 0%, #48c1fe 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  padding: 14px 24px;
-  cursor: pointer;
-`;
-
-const Text = styled.span`
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 700;
-`;
-
 const DateSection = styled.div`
   width: 100%;
   display: flex;

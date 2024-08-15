@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
-import { Headphones } from "@mui/icons-material";
+import React from 'react';
+import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
+import { Headphones } from '@mui/icons-material';
 
 interface IProps {
   item: {
@@ -20,7 +20,6 @@ const ChatRoomCard: React.FC<IProps> = ({ item }) => {
   const toChatRoomPage = () => {
     navigate(`${item.url}`);
   };
-
 
   return (
     <Item key={item.id}>
@@ -46,7 +45,7 @@ const ChatRoomCard: React.FC<IProps> = ({ item }) => {
 export default ChatRoomCard;
 
 const Item = styled.div`
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

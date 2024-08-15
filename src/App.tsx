@@ -13,6 +13,7 @@ import {
   ProfSpeakers,
   TherpiestDetail,
   ChatRoomDetail,
+  Settings,
 } from "./Pages";
 import { Routes as RoutesLink } from "./constants/routes";
 
@@ -39,7 +40,7 @@ const App: React.FC = () => {
             path={RoutesLink.therapistDetail}
             element={<TherpiestDetail />}
           />
-
+          <Route path={RoutesLink.settings} element={<Settings />} />
           <Route path="*" element={<Navigate to={RoutesLink.logIn} />} />
         </Routes>
       </BrowserRouter>

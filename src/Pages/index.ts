@@ -9,6 +9,7 @@ import ProfSpeakers from "./ProfSpeakers";
 import TherpiestDetail from "./TherpiestDetail";
 import ChatRoomDetail from "./ChatRoomDetail";
 import Settings from "./Settings";
+import Calendar from "./Calendar";
 
 export {
   WelcomePage,
@@ -22,4 +23,5 @@ export {
   ProfSpeakers,
   ChatRoomDetail,
   Settings,
+  Calendar,
 };

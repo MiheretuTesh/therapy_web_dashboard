@@ -7,6 +7,7 @@ import FriendList from "./FriendList";
 import Therpiests from "./Therpiests";
 import ProfSpeakers from "./ProfSpeakers";
 import TherpiestDetail from "./TherpiestDetail";
+import ChatRoomDetail from "./ChatRoomDetail";
 
 export {
   WelcomePage,
@@ -18,4 +19,5 @@ export {
   Therpiests,
   TherpiestDetail,
   ProfSpeakers,
+  ChatRoomDetail,
 };

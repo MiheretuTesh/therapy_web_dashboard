@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
+import { Routes } from "../../../constants/routes";
 import LanguageDropdown from "./DropDown/LanguageDropdown";
 import DateDropdown from "./DropDown/DatePicker";
 import SubjectDropdown from "./DropDown/SubjectDropdown";
@@ -13,10 +15,16 @@ const Layout: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isDropdownVisible, setIsDropdownVisible] = useState(true);
 
+  const navigate = useNavigate();
+
   const tabContent = ["Tab 1", "Tab 2", "Tab 3"];
 
   const toggleDropdownVisibility = () => {
     setIsDropdownVisible(!isDropdownVisible);
+  };
+
+  const navigateToMeeting = () => {
+    navigate(Routes.chatRoomDetail.replace(":id", "1"));
   };
 
   return (
@@ -88,6 +96,7 @@ const Layout: React.FC = () => {
               key={index}
               imageSrc={card.imageSrc}
               title={card.title}
+              onClick={navigateToMeeting}
             />
           ))}
         </CardContainer>

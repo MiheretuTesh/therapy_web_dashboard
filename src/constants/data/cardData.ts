@@ -28,6 +28,29 @@ export const chatRoomCard = [
   },
 ];
 
+export const meetingParticipantCard = [
+  {
+    imageSrc:
+      "https://s3-alpha-sig.figma.com/img/3d8d/c598/9258e71c235ab88e1603717863174370?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nD-T3IBp9DOwB3qUyCh2PBsENFtYjIumIiglaTUwBgvRtP2Wb-iS8O-IN5rZLo~FkpE77cW35S8ZWaXbHM1WCQkzx-iq6qg8CEPexWtB6tLeKObUA~HvTXmi9GvxGb4oTFJM0VKsPjrft7zVqbSacBRArexYtB88MI~oKHSV8VHVR~VrFcfnG~YvVnD-V3lWCQe6h1keaHezjHl~S53Z57rPbWBzuOkSKkCjRr3uWo4LGxIGRmDnizFvwLO1S9tsOfuRp6UNYC02KY6MkWEs5oh-Z68C1slaWcfjRtnAgzq8XxvmmYcNCR7BZXNSp03vp8Z343JH54cvlu3GYKlZnQ__",
+    title: "Jack Ostin",
+  },
+  {
+    imageSrc:
+      "https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Jack Ostin",
+  },
+  {
+    imageSrc:
+      "https://s3-alpha-sig.figma.com/img/480a/527a/233aefcdba2d8345ebcccb8174112faa?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pHpfgbEB8gKJI3WcbNnJ6ctd2mk87Krlz135zzfbZ~pjS0TznwT3DjR-CTChlNcCUW-GLqqy8lsZBRUY1~KibgloBG~Jlo3qAMtrarRFxdiCM0t1lzJWjej-wunJvAAqVwasgyxmO4xgco7kEzH7-q7YEMRqTVLmXbxnV7Go6urZNeSY-PWya1yInrVcjUwSmisAk5rnbHQViJrQHM8MQkaQBowiJJEx93FaFGFy137m7vJcyVhrEpmvFCwLP6bWc9mrgvu4Ts0NInIvYfM1Htb9-szJ65w45gijmW~XY7f5qGISOXB8-E-9lOS1DGRY8ywZfSQbg8qKrlW6WHPilQ__",
+    title: "Jack Ostin",
+  },
+  {
+    imageSrc:
+      "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Jack Ostin",
+  },
+];
+
 export const friendsPageChatRoomCard = [
   {
     imageSrc: ChatRoomOne,
@@ -194,5 +217,40 @@ export const therapiestPageUserCard = [
     rating: 4.4,
     ratingCount: 265,
     buttonText: "Start Session",
+  },
+];
+
+export const messageLst = [
+  {
+    name: "Raite",
+    message: "Hi",
+    current: false,
+  },
+  {
+    name: "Jane",
+    message: "Hello ",
+    current: false,
+  },
+  {
+    name: "Me",
+    message: "Hello ",
+    current: true,
+  },
+  {
+    name: "Raite",
+    message:
+      "Tortor in mauris ipsum nisl feugiat arcu, pellentesque risus nisl.",
+    current: false,
+  },
+  {
+    name: "Raite",
+    message: "Hi",
+    current: false,
+  },
+  {
+    name: "Me",
+    message:
+      "Tortor in mauris ipsum nisl feugiat arcu, pellentesque risus nisl.",
+    current: true,
   },
 ];

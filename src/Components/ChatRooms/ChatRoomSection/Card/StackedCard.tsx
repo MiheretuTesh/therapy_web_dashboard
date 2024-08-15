@@ -6,12 +6,13 @@ import { CalendarToday, VideocamOutlined } from "@mui/icons-material";
 const Card: React.FC<{
   imageSrc: string;
   title: string;
-}> = ({ imageSrc, title }) => {
+  onClick: () => void;
+}> = ({ imageSrc, title, onClick }) => {
   return (
     <CardContainer>
       <ImageContainer>
         <Image src={imageSrc} alt="Card Image" />
-        <PlayIconWrapper />
+        <PlayIconWrapper onClick={onClick} />
         <Content>
           <BreakLine width="93.43px" />
           <TitleContainer>
@@ -65,6 +66,7 @@ const ImageContainer = styled.div`
   width: 300px;
   height: 345px;
   overflow: hidden;
+  cursor: default;
 `;
 
 const Image = styled.img`
@@ -80,7 +82,6 @@ const PlayIconWrapper = styled(PlayArrow)`
   transform: translate(-50%, -50%);
   color: white;
   font-size: 48px;
-  pointer-events: none;
   cursor: pointer;
 `;
 

@@ -1,13 +1,14 @@
-import WelcomePage from './Welcome';
-import AuthPage from './Auth';
-import HomePage from './Home';
-import ProfilePage from './Profile';
-import ChatRooms from './ChatRooms';
-import FriendList from './FriendList';
-import Therpiests from './Therpiests';
-import ProfSpeakers from './ProfSpeakers';
-import TherpiestDetail from './TherpiestDetail';
-import Settings from './Settings';
+import WelcomePage from "./Welcome";
+import AuthPage from "./Auth";
+import HomePage from "./Home";
+import ProfilePage from "./Profile";
+import ChatRooms from "./ChatRooms";
+import FriendList from "./FriendList";
+import Therpiests from "./Therpiests";
+import ProfSpeakers from "./ProfSpeakers";
+import TherpiestDetail from "./TherpiestDetail";
+import ChatRoomDetail from "./ChatRoomDetail";
+import Settings from "./Settings";
 
 export {
   WelcomePage,
@@ -19,5 +20,6 @@ export {
   Therpiests,
   TherpiestDetail,
   ProfSpeakers,
+  ChatRoomDetail,
   Settings,
 };

@@ -27,6 +27,9 @@ enum Routes {
 
   // therapists routes
   therapistDetail = "/therpiests/:id",
+
+  // chatroom routes
+  chatRoomDetail = "/chatRooms/:id",
 }
 
 const sidebarRoutes = [

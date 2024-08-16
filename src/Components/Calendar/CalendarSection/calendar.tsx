@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import styled from "@emotion/styled";
 import DayView from "./day-view/day-view";
+import { WeekView } from "./week-view/week-view";
 import { add, sub, endOfWeek, startOfWeek, formatDate } from "date-fns";
 
 import type { Event } from "../../../constants/data/types";
@@ -51,14 +52,18 @@ const Calendar: React.FC<CalendarProps> = ({ date, events, view = "day" }) => {
         const weekStart = startOfWeek(date);
         const weekEnd = endOfWeek(date);
 
-        const startMonth = formatDate(weekStart, "MMM");
-        const endMonth = formatDate(weekEnd, "MMM");
+        const startDay = formatDate(weekStart, "d");
+        const endDay = formatDate(weekEnd, "d");
+
+        const startMonth = formatDate(weekStart, "MMMM");
+        const endMonth = formatDate(weekEnd, "MMMM");
+
         const year = formatDate(weekStart, "yyyy");
 
         if (startMonth !== endMonth) {
-          return `${startMonth} – ${endMonth} ${year}`;
+          return `${startDay} ${startMonth} – ${endDay} ${endMonth} ${year}`;
         } else {
-          return `${startMonth} ${year}`;
+          return `${startDay} ${startMonth} ${year} – ${endDay} ${startMonth} ${year}`;
         }
       }
 
@@ -108,7 +113,7 @@ const Calendar: React.FC<CalendarProps> = ({ date, events, view = "day" }) => {
         </HeaderRight>
       </CalendarHeader>
       {curView === "day" && <DayView date={curDate} events={events} />}
-      {curView === "week" && <>WEEK VIEW</>}
+      {curView === "week" && <WeekView date={curDate} events={events} />}
       {curView === "month" && <>MONTH VIEW</>}
     </CalendarWrapper>
   );

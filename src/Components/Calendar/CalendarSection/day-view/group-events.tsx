@@ -1,6 +1,6 @@
 import { add, isAfter, isBefore, isSameDay, isWithinInterval } from "date-fns";
 
-import type { Event } from "../types";
+import type { Event } from "../../../../constants/data/types";
 
 export type GroupedEvents = {
   allDayEvents: Event[];

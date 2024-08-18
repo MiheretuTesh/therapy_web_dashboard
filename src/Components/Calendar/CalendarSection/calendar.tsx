@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import styled from "@emotion/styled";
 import DayView from "./day-view/day-view";
 import { WeekView } from "./week-view/week-view";
+import { MonthView } from "./month-view";
 import { add, sub, endOfWeek, startOfWeek, formatDate } from "date-fns";
 
 import type { Event } from "../../../constants/data/types";
@@ -14,7 +15,7 @@ export type CalendarProps = {
   date: string | number | Date;
 };
 
-const Calendar: React.FC<CalendarProps> = ({ date, events, view = "day" }) => {
+const Calendar: React.FC<CalendarProps> = ({ date, events, view = "week" }) => {
   const [curView, setCurView] = useState<View>(view);
   const [curDate, setCurDate] = useState<Date>(new Date(date));
 
@@ -114,7 +115,7 @@ const Calendar: React.FC<CalendarProps> = ({ date, events, view = "day" }) => {
       </CalendarHeader>
       {curView === "day" && <DayView date={curDate} events={events} />}
       {curView === "week" && <WeekView date={curDate} events={events} />}
-      {curView === "month" && <>MONTH VIEW</>}
+      {curView === "month" && <MonthView date={curDate} events={events} />}
     </CalendarWrapper>
   );
 };

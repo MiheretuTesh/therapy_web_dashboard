@@ -6,7 +6,6 @@ import { Event } from "../../../../constants/data/types";
 import { WeekEvent } from "./group-events";
 import { createWeekGroups } from "../week-view/group-events";
 import { MonthDayView } from "./month-day-view";
-import { MonthWeekEventsView } from "./month-week-events-view";
 
 type MonthWeekViewProps = {
   week: Date[];
@@ -48,7 +47,6 @@ export const MonthWeekView: React.FC<MonthWeekViewProps> = ({
         })}
       </WeekRow>
       <EventsContainer>
-        <MonthWeekEventsView date={week[3]} groups={limitedGroups} />
         <MinHeightContainer>
           {week.map((day) => {
             const dayKey = day.toISOString();

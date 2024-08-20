@@ -9,7 +9,7 @@ const ChatRoomSection: React.FC = () => {
   return (
     <Wrapper>
       <TextButton
-        text="Create a Meeting"
+        text="Schedule a consultation"
         onClick={() => console.log("Button clicked")}
         fontSize="18px"
         backgroundColor="linear-gradient(91.41deg, #e617b2 0%, #48c1fe 100%)"
@@ -17,7 +17,7 @@ const ChatRoomSection: React.FC = () => {
 
       <ChatRoomBlock>
         <TextContainer>
-          <TextT>Friends (29)</TextT>
+          <TextT>Chat rooms (0)</TextT>
           <Caption>See all</Caption>
         </TextContainer>
         <TextTemp>Schedulled today:</TextTemp>
@@ -259,12 +259,12 @@ const HeadphonesIcon = styled(Headphones)`
 `;
 
 const Title = styled.h3`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: #3a3a3a;
   text-align: center;
   width: 100%;
-  line-height: 21.58px;
+  line-height: 16.58px;
 `;
 
 const CardCaption = styled.h3`

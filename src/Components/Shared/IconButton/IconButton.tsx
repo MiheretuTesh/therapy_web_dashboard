@@ -6,12 +6,21 @@ const IconButton: React.FC<{
   text: string;
   backgroundColor?: string;
   hoverBackgroundColor?: string;
+  size?: string;
   onClick: () => void;
-}> = ({ imageSrc, text, backgroundColor, hoverBackgroundColor, onClick }) => {
+}> = ({
+  imageSrc,
+  text,
+  backgroundColor,
+  hoverBackgroundColor,
+  size,
+  onClick,
+}) => {
   return (
     <StyledButton
       backgroundColor={backgroundColor}
       hoverBackgroundColor={hoverBackgroundColor}
+      size={size}
       onClick={onClick}
     >
       <StyledIcon>
@@ -31,6 +40,7 @@ export default IconButton;
 const StyledButton = styled.button<{
   backgroundColor?: string;
   hoverBackgroundColor?: string;
+  size?: string;
 }>`
   display: flex;
   justify-content: space-evenly;
@@ -40,7 +50,7 @@ const StyledButton = styled.button<{
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 2px 8px;
+  padding: ${(props) => (props.size === "small" ? "0px 8px" : "2px 8px")};
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;

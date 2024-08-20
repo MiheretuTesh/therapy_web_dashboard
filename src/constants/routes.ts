@@ -27,6 +27,7 @@ enum Routes {
 
   // therapists routes
   therapistDetail = "/therpiests/:id",
+  scheduleTherapy = "/therpiests/:id/schedule",
 
   // chatroom routes
   chatRoomDetail = "/chatRooms/:id",

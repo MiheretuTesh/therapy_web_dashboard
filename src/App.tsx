@@ -15,6 +15,7 @@ import {
   ChatRoomDetail,
   Settings,
   Calendar,
+  TherapySchedule,
 } from "./Pages";
 import { Routes as RoutesLink } from "./constants/routes";
 
@@ -40,6 +41,10 @@ const App: React.FC = () => {
           <Route
             path={RoutesLink.therapistDetail}
             element={<TherpiestDetail />}
+          />
+          <Route
+            path={RoutesLink.scheduleTherapy}
+            element={<TherapySchedule />}
           />
           <Route path={RoutesLink.settings} element={<Settings />} />
           <Route path={RoutesLink.calendar} element={<Calendar />} />

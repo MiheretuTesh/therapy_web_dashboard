@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DateCalendar } from "@mui/x-date-pickers";
 import moment, { Moment } from "moment";
 import styled from "@emotion/styled";
+import { Routes } from "../../../constants/routes";
 import TextButton from "../../Shared/TextButton";
 
 const card = [
@@ -43,6 +45,8 @@ const card = [
   },
 ];
 const CalendarSection: React.FC = () => {
+  const navigate = useNavigate();
+
   const [selectedDate, setSelectedDate] = useState<Moment>(moment());
 
   const [selectedIndex, setSelectedIndex] = useState<boolean | any>(null);
@@ -53,6 +57,11 @@ const CalendarSection: React.FC = () => {
     if (status !== "inactive")
       setSelectedIndex(selectedIndex === index ? null : index);
   };
+
+  const navigateToScheduleMeeting = () => {
+    navigate(Routes.scheduleTherapy.replace(":id", "1"));
+  };
+
   return (
     <Wrapper>
       <DatePickerContainer>
@@ -82,7 +91,7 @@ const CalendarSection: React.FC = () => {
       </PickedDateContainer>
       <TextButton
         text="Schedule a consultation"
-        onClick={() => console.log("Button clicked")}
+        onClick={navigateToScheduleMeeting}
         fontSize="18px"
         backgroundColor="linear-gradient(91.41deg, #e617b2 0%, #48c1fe 100%)"
       />

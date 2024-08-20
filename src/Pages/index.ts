@@ -10,6 +10,7 @@ import TherpiestDetail from "./TherpiestDetail";
 import ChatRoomDetail from "./ChatRoomDetail";
 import Settings from "./Settings";
 import Calendar from "./Calendar";
+import TherapySchedule from "./TherapySchedule";
 
 export {
   WelcomePage,
@@ -24,4 +25,5 @@ export {
   ChatRoomDetail,
   Settings,
   Calendar,
+  TherapySchedule,
 };
